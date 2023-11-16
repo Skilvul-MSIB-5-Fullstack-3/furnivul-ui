@@ -13,7 +13,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
-// import outlet
+// import outlet pages
 import LandingPage from "./pages/LandingPage.jsx";
 import CategoryProduct from "./pages/CategoryProduct.jsx";
 import OurBusiness from "./pages/OurBusiness.jsx";
@@ -23,6 +23,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Layout />} errorElement={<NotFound />} />
+      <Route path="/" element={<LandingPage />} />
+
+      {/* routing pages */}
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
