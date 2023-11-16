@@ -1,10 +1,41 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// import framework
+import "flowbite-react";
+import { Route, RouterProvider, createRoutesFromElements } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
+
+// import pages
+import Layout from "./pages/Layout";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import NotFound from "./pages/NotFound";
+
+// import outlet
+import LandingPage from "./pages/LandingPage.jsx";
+import CategoryProduct from "./pages/CategoryProduct.jsx";
+import OurBusiness from "./pages/OurBusiness.jsx";
+import Article from "./pages/Article.jsx";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Layout />} errorElement={<NotFound />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/home" element={<LandingPage />} />
+      <Route path="/category-product" element={<CategoryProduct />} />
+      <Route path="/our-business" element={<OurBusiness />} />
+      <Route path="/article" element={<Article />} />
+    </>
+  )
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
