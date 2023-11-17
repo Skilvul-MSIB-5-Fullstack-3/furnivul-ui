@@ -10,7 +10,7 @@ import { createBrowserRouter } from "react-router-dom";
 // import pages
 import Layout from "./pages/Layout";
 import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Register from "./pages/Register.jsx";
 import NotFound from "./pages/NotFound";
 
 // import outlet pages
