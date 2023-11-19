@@ -1,4 +1,4 @@
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function navbar() {
@@ -14,46 +14,54 @@ function navbar() {
           Flowbite React
         </span>
       </Navbar.Brand>
-      <div className="flex md:order-2">
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <Avatar
-              alt="User settings"
-              img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-              rounded
-            />
-          }
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">
-              name@flowbite.com
-            </span>
-          </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
-        </Dropdown>
-        <Navbar.Toggle />
-      </div>
+      <div className="flex md:order-2"></div>
       <Navbar.Collapse>
         <NavLink to={"/home"} className="nav-link">
-          home
-        </NavLink>
+          <Navbar.Link> Home</Navbar.Link>
+        </NavLink>{" "}
         <NavLink to={"/category-product"} className="nav-link">
-          category product
+          <Navbar.Link>Category </Navbar.Link>
         </NavLink>
         <NavLink to={"/our-business"} className="nav-link">
-          our business
+          {" "}
+          <Navbar.Link>Our business </Navbar.Link>
         </NavLink>
         <NavLink to={"/article"} className="nav-link">
-          article
-        </NavLink>
+          <Navbar.Link>Article </Navbar.Link>
+        </NavLink>{" "}
       </Navbar.Collapse>
+      <Button>
+        <NavLink to={"/login"}>Login</NavLink>
+      </Button>
+      <Button>
+        <NavLink to={"/register"}>Register</NavLink>
+      </Button>
+
+      <Dropdown
+        arrowIcon={false}
+        inline
+        label={
+          <Avatar
+            alt="User settings"
+            img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+            rounded
+          />
+        }
+      >
+        <Dropdown.Header>
+          <span className="block text-sm">Bonnie Green</span>
+          <span className="block truncate text-sm font-medium">
+            name@flowbite.com
+          </span>
+        </Dropdown.Header>
+        <Dropdown.Item>Dashboard</Dropdown.Item>
+        <Dropdown.Item>Settings</Dropdown.Item>
+        <Dropdown.Item>Earnings</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item>Sign out</Dropdown.Item>
+      </Dropdown>
+
+      <Navbar.Toggle />
     </Navbar>
   );
 }
